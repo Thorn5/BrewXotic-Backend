@@ -1,0 +1,78 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "address": {
+            "bsonType": "object",
+            "properties": {
+                "city": {
+                    "bsonType": "string",
+                    "required": true
+                },
+                "country": {
+                    "bsonType": "string",
+                    "required": true
+                },
+                "house_number": {
+                    "bsonType": "string",
+                    "required": true
+                },
+                "postal_code": {
+                    "bsonType": "int",
+                    "required": true
+                },
+                "street": {
+                    "bsonType": "string",
+                    "required": true
+                }
+            },
+            "required": true
+        },
+        "contact_details": {
+            "bsonType": "object",
+            "properties": {
+                "cell": {
+                    "bsonType": "string"
+                },
+                "email": {
+                    "bsonType": "string",
+                    "required": true
+                },
+                "landline": {
+                    "bsonType": "string"
+                }
+            },
+            "required": true
+        },
+        "first_name": {
+            "bsonType": "string",
+            "required": true
+        },
+        "payment_details": {
+            "bsonType": "object",
+            "properties": {
+                "IBAN": {
+                    "bsonType": "string"
+                },
+                "bank": {
+                    "bsonType": "string"
+                },
+                "preferred_method": {
+                    "bsonType": "string",
+                    "required": true
+                }
+            },
+            "required": true
+        },
+        "surname": {
+            "bsonType": "string",
+            "required": true
+        },
+        "timestamp": {
+            "type": "Date",
+            "default": "Date.now"
+        }
+    },
+    "title": "customer"
+}

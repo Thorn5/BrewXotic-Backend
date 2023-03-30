@@ -1,0 +1,8 @@
+{
+    "_id": {
+        "ref": "#/relationship/mongodb-atlas/BrewXotic/orders",
+        "source_key": "_id",
+        "foreign_key": "product_id",
+        "is_list": false
+    }
+}

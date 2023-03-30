@@ -1,0 +1,39 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "customer_id": {
+            "bsonType": "objectId",
+            "required": true
+        },
+        "in_cart": {
+            "bsonType": "bool",
+            "required": true
+        },
+        "order_id": {
+            "bsonType": "objectId",
+            "required": true
+        },
+        "price": {
+            "bsonType": "decimal",
+            "required": true
+        },
+        "product_id": {
+            "bsonType": "objectId",
+            "required": true
+        },
+        "quantity": {
+            "bsonType": "int",
+            "required": true
+        },
+        "status": {
+            "bsonType": "string"
+        },
+        "timestamp": {
+            "type": "Date",
+            "default": "Date.now"
+        }
+    },
+    "title": "order"
+}

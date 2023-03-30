@@ -1,0 +1,32 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "description": {
+            "bsonType": "string",
+            "required": true
+        },
+        "image": {
+            "bsonType": "string"
+        },
+        "name": {
+            "bsonType": "string",
+            "required": true
+        },
+        "price": {
+            "bsonType": "decimal",
+            "required": true
+        },
+        "quantity_available": {
+            "bsonType": "int"
+        },
+        "timestamp": {
+            "type": "Date",
+            "default": "Date.now"
+        }
+    },
+    "title": "product"
+}
+
+
