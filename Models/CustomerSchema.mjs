@@ -59,10 +59,9 @@ const CustomerSchema = new mongoose.Schema(
           },
           "surname": {
             "bsonType": "string"
-          },
-          
+          }
         }
-      }
+      },{ timestamps: true }
 )
 
 const Customer = mongoose.model('Customer', CustomerSchema);
