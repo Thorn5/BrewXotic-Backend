@@ -2,63 +2,62 @@ import mongoose from "mongoose";
 
 const CustomerSchema = new mongoose.Schema(
   {
-    properties: {
-      _id: {
-        bsonType: "objectId",
+    first_name: {
+      type: String,
+      required: true,
+    },
+    surname: {
+      type: String,
+      required: true,
+    },
+    address: {
+      street: {
+        type: String,
+        required: true,
       },
-      address: {
-        bsonType: "object",
-        properties: {
-          city: {
-            bsonType: "string",
-          },
-          country: {
-            bsonType: "string",
-          },
-          house_number: {
-            bsonType: "string",
-          },
-          postal_code: {
-            bsonType: "number",
-          },
-          street: {
-            bsonType: "string",
-          },
-        },
+      house_number: {
+        type: Date,
+        required: true,
       },
-      contact_details: {
-        bsonType: "object",
-        properties: {
-          cell: {
-            bsonType: "string",
-          },
-          email: {
-            bsonType: "string",
-          },
-          landline: {
-            bsonType: "string",
-          },
-        },
+      postal_code: {
+        type: Number,
+        required: true,
       },
-      first_name: {
-        bsonType: "string",
+      city: {
+        type: String,
+        required: true,
       },
-      payment_details: {
-        bsonType: "object",
-        properties: {
-          IBAN: {
-            bsonType: "string",
-          },
-          bank: {
-            bsonType: "string",
-          },
-          preferred_method: {
-            bsonType: "string",
-          },
-        },
+      country: {
+        type: String,
+        required: true,
       },
-      surname: {
-        bsonType: "string",
+    },
+    contact_details: {
+      cell: {
+        type: String,
+        required: true,
+      },
+      email: {
+        type: String,
+        required: true,
+      },
+      landline: {
+        type: String,
+        required: true,
+      },
+    },
+    payment_details: {
+      IBAN: {
+        type: String,
+        required: true,
+      },
+      bank: {
+        type: String,
+        required: true,
+      },
+      preferred_method: {
+        type: String,
+        required: true,
       },
     },
   },
