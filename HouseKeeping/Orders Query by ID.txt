@@ -1,0 +1,63 @@
+.aggregate([
+    {
+      $match: { _id: new mongoose.Types.ObjectId(req.params.orderId) },
+    },
+    {
+      $lookup: {
+        from: "customers",
+        localField: "customer_id",
+        foreignField: "_id",
+        as: "customer",
+      },
+    },
+    {
+      $lookup: {
+        from: "products",
+        localField: "items.product_id",
+        foreignField: "_id",
+        as: "products",
+      },
+    },
+    {
+      $project: {
+        customer: { $arrayElemAt: ["$customer", 0] },
+        items: {
+          $map: {
+            input: "$items",
+            as: "item",
+            in: {
+              product_id: "$$item.product_id",
+              sale_price: "$$item.sale_price",
+              quantity: "$$item.quantity",
+              name: {
+                $arrayElemAt: [
+                  "$products.name",
+                  { $indexOfArray: ["$products._id", "$$item.product_id"] },
+                ],
+              },
+              description: {
+                $arrayElemAt: [
+                  "$products.description",
+                  { $indexOfArray: ["$products._id", "$$item.product_id"] },
+                ],
+              },
+              image: {
+                $arrayElemAt: [
+                  "$products.image",
+                  { $indexOfArray: ["$products._id", "$$item.product_id"] },
+                ],
+              },
+              price: {
+                $arrayElemAt: [
+                  "$products.price",
+                  { $indexOfArray: ["$products._id", "$$item.product_id"] },
+                ],
+              },
+            },
+          },
+        },
+        in_cart: 1,
+        status: 1,
+      },
+    },
+  ])

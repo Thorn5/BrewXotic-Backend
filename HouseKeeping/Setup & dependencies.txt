@@ -1,0 +1,8 @@
+npm init
+npm i nodemon
+npm i dotenv
+npm install express --save
+npm i mongoose
+npm i morgan
+npm i bcrypt
+npm i jsonwebtoken

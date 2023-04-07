@@ -1,15 +1,4 @@
-npm init
-npm i nodemon
-npm i dotenv
-npm install express --save
-npm i mongoose
-npm i morgan
-npm i bcrypt
-npm i jsonwebtoken
-
--- order listing, fully matched
-use('BrewXotic');
-db.orders.aggregate([
+.aggregate([
     {
       $lookup: {
         from: 'customers',
@@ -79,5 +68,3 @@ db.orders.aggregate([
       }
     }
   ])
-
--- find order by id, fully matched
