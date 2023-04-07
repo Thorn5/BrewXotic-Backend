@@ -167,4 +167,119 @@ router.get("/:orderId", (req, res) => {
     });
 });
 
+// router.get("/:orderId", (req, res) => {
+//   Order.aggregate([
+//     {
+//       $match: { _id: new mongoose.Types.ObjectId(req.params.orderId) },
+//     },
+//     {
+//       $lookup: {
+//         from: "customers",
+//         localField: "customer_id",
+//         foreignField: "_id",
+//         as: "customer",
+//       },
+//     },
+//     {
+//       $lookup: {
+//         from: "products",
+//         localField: "items.product_id",
+//         foreignField: "_id",
+//         as: "products",
+//       },
+//     },
+//     {
+//       $addFields:{
+//           customer:{
+//               $arrayElemAt:["$customer",0]
+//           }
+//       }
+//     },
+//     {
+//       $addFields:{
+//           items:{
+//               $map:{
+//                   input:"$items",
+//                   as:"item",
+//                   in:{
+//                       product_id:"$$item.product_id",
+//                       sale_price:"$$item.sale_price",
+//                       quantity:"$$item.quantity",
+//                       name:{
+//                           $let:{
+//                               vars:{
+//                                   index:{
+//                                       $indexOfArray:["$products._id","$$item.product_id"]
+//                                   }
+//                               },
+//                               in:{
+//                                   $arrayElemAt:["$products.name","$$index"]
+//                               }
+//                           }
+//                       },
+//                       description:{
+//                           $let:{
+//                               vars:{
+//                                   index:{
+//                                       $indexOfArray:["$products._id","$$item.product_id"]
+//                                   }
+//                               },
+//                               in:{
+//                                   $arrayElemAt:["$products.description","$$index"]
+//                               }
+//                           }
+//                       },
+//                       image:{
+//                           $let:{
+//                               vars:{
+//                                   index:{
+//                                       $indexOfArray:["$products._id","$$item.product_id"]
+//                                   }
+//                               },
+//                               in:{
+//                                   $arrayElemAt:["$products.image","$$index"]
+//                               }
+//                           }
+//                       },
+//                       price:{
+//                           $let:{
+//                               vars:{
+//                                   index:{
+//                                       $indexOfArray:["$products._id","$$item.product_id"]
+//                                   }
+//                               },
+//                               in:{
+//                                   $arrayElemAt:["$products.price","$$index"]
+//                               }
+//                           }
+//                       }
+//                   }
+//               }
+//           }
+//       }
+//     },
+//     {
+//       $project: {
+//         customer:1,
+//         items:1,
+//         in_cart: 1,
+//         status: 1,
+//       },
+//     },
+//   ])
+
+//     .then((data) => {
+//       if (!data) {
+//         return res.sendStatus(404);
+//       }
+//       res.json(data);
+//     })
+//     .catch((err) => {
+//       console.log(err.message);
+//       res.sendStatus(500);
+//     });
+// });
+
+
+
 export default router;
