@@ -161,7 +161,7 @@ const collection =
         }
       ])
       if (!data) {
-        returnres.sendStatus(404);
+        return res.sendStatus(404);
       }
       res.json(data);
     } catch (err) {
