@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const connectionString = process.env.ATLAS_URI || "";
 
-// Await has no effect here
+//? Would await have any effect here? Perhaps if it were wrapped in a function?
 mongoose
     .connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true, })
     .then(() => {

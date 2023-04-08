@@ -15,7 +15,7 @@ app.use('/api/customers', customer);
 app.use('/api/products', product);
 app.use('/api/orders', order);
 
-// await has no effect here
+//? Would await have any effect here?
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
