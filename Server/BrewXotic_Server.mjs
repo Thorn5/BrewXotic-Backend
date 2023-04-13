@@ -4,12 +4,14 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT || 8001
 import morgan from 'morgan';
+import cors from 'cors';
 import "../Database/BrewXotic_Client.mjs";
 import customer from '../Routers/customerRouter.mjs';
 import product from '../Routers/productRouter.mjs';
 import order from '../Routers/orderRouter.mjs';
 
 app.use(morgan('combined'));
+app.use(cors());
 app.use(express.json());
 app.use('/api/customers', customer);
 app.use('/api/products', product);
