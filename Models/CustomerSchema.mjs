@@ -2,26 +2,25 @@ import mongoose from "mongoose";
 
 const CustomerSchema = new mongoose.Schema(
   {
-    first_name: {
-      type: "String",
-    },
+    first_name: String,
+    surname: String,
     address: {
-      street: {
-        type: "String",
-      },
-      house_number: {
-        type: "String",
-      },
-      postal_code: {
-        type: "String",
-      },
-      city: {
-        type: "String",
-      },
-      country: {
-        type: "String",
-      },
+      street: String,
+      house_number: String,
+      postal_code: String,
+      city: String,
+      country: String,
     },
+    contact_details: {
+      cell: String,
+      email: String,
+      landline: String,
+    },
+    payment_details: {
+      IBAN: String,
+      bank: String,
+      preferred_method: String,
+    }
   },
   { timestamps: true }
 );
