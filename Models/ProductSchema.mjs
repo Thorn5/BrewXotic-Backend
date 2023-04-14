@@ -2,25 +2,34 @@ import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema(
   {
+    _id: {
+      $oid: {
+        type: "ObjectId",
+      },
+    },
     name: {
-      type: String,
-      required: true,
+      type: "String",
     },
     description: {
-      type: String,
-      required: true,
+      type: "String",
     },
-    image: {
-      type: String,
-      required: true,
+    images: {
+      full_size: {
+        type: "String",
+      },
+      thumbnail: {
+        type: "String",
+      },
     },
     price: {
-      type: Number,
-      required: true,
+      $numberDecimal: {
+        type: "Number",
+      },
     },
     quantity_available: {
-      type: Number,
-      required: true,
+      $numberInt: {
+        type: "Number",
+      },
     },
   },
   { timestamps: true }
