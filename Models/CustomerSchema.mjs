@@ -1,29 +1,29 @@
 import mongoose from "mongoose";
 
-const CustomerSchema = new mongoose.Schema(
-  {
-    first_name: String,
-    surname: String,
-    address: {
-      street: String,
-      house_number: String,
-      postal_code: String,
-      city: String,
-      country: String,
-    },
-    contact_details: {
-      cell: String,
-      email: String,
-      landline: String,
-    },
-    payment_details: {
-      IBAN: String,
-      bank: String,
-      preferred_method: String,
-    }
+const CustomerSchema = new mongoose.Schema({
+  first_name: { type: String, required: true },
+  surname: { type: String, required: true },
+  address: {
+    street: { type: String, required: true },
+    house_number: { type: String, required: true },
+    postal_code: { type: String, required: true },
+    city: { type: String, required: true },
+    country: String
   },
-  { timestamps: true }
-);
+  contact_details: {
+    email: { type: String, required: true },
+    landline: String,
+    cell: String
+  },
+  payment_details: {
+    preferred_method: { type: String, required: true },
+    IBAN: { type: String, required: true },
+    bank: String
+  }
+}, { timestamps: true });
+
 
 const Customer = mongoose.model("Customer", CustomerSchema);
 export default Customer;
+
+
