@@ -12,7 +12,7 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
-import "../Database/BrewXotic_Client.mjs";
+import "../database/BrewXotic_Client.mjs";
 import customer from '../routers/customerRouter.mjs';
 import product from '../routers/productRouter.mjs';
 import order from '../routers/orderRouter.mjs';
@@ -28,3 +28,5 @@ app.use('/api/orders', order);
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+
