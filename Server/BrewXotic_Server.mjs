@@ -13,9 +13,9 @@ const corsOptions = {
   credentials: true,
 };
 import "../Database/BrewXotic_Client.mjs";
-import customer from '../Routers/customerRouter.mjs';
-import product from '../Routers/productRouter.mjs';
-import order from '../Routers/orderRouter.mjs';
+import customer from '../routers/customerRouter.mjs';
+import product from '../routers/productRouter.mjs';
+import order from '../routers/orderRouter.mjs';
 
 app.use(morgan('combined'));
 app.use(cors(corsOptions));
