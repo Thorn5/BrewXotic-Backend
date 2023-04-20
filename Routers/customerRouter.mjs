@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+import mongoose from "mongoose";
 import Customer from '../Models/CustomerSchema.mjs';
 
 const collection =

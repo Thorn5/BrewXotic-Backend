@@ -161,4 +161,17 @@ router.get("/:orderId", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  try {
+    const { customer_id, items } = req.body;
+    const order = new Order({ customer_id, items });
+    await order.save();
+    res.header('Access-Control-Allow-Origin', '*');
+    res.sendStatus(201);
+  } catch (err) {
+    console.log(err.message);
+    res.sendStatus(500);
+  }
+});
+
 export default router;
