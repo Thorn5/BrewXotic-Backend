@@ -6,7 +6,6 @@ const port = process.env.PORT || 8001
 import morgan from 'morgan';
 import cors from 'cors';
 const corsOptions = {
-  // origin: "http://localhost:3000",
   methods: ["GET", "POST", "PUT", "DELETE"],
   optionsSuccessStatus: 204,
   allowedHeaders: ["Content-Type", "Authorization"],
