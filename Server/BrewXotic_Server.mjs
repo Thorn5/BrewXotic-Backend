@@ -12,7 +12,7 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
-import "../database/BrewXotic_Client.mjs";
+import "../Database/BrewXotic_Client.mjs";
 import customer from '../Routers/customerRouter.mjs';
 import product from '../Routers/productRouter.mjs';
 import order from '../Routers/orderRouter.mjs';
