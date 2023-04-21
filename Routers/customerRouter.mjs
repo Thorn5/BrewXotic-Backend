@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import mongoose from "mongoose";
-import Customer from '../models/CustomerSchema.mjs';
+import Customer from '../Models/CustomerSchema.mjs';
 
 const collection =
   router.get('/', async (req, res) => {
